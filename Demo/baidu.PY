@@ -1,4 +1,4 @@
 import urllib2
 
-response = urllib2.urlopen("http://www.baidu.com")
+response = urllib2.urlopen("http://www.google.com")
 print response.read()
