@@ -15,7 +15,8 @@ class xinouzhouThread (threading.Thread):
     def run(self):
         print "Starting " + self.name
         readHtmlBybs4(self.url,self.index,self.file,self.keyword)
-        #readHtmlByRex(self.url,self.index,self.file,self.keyword)
+        #readHtmlByRex(self.url,self.index,self.f
+        # le,self.keyword)
         print "Exiting " + self.name
 
 def xinouzhouSpider(url,begin_page,end_page,keyword):
