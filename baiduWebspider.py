@@ -14,15 +14,10 @@ def baidu_tieba(url,begin_page,end_page):
 
 
 #-------- 在这里输入参数 ------------------
-
-# 这个是山东大学的百度贴吧中某一个帖子的地址
-#bdurl = 'http://tieba.baidu.com/p/2296017831?pn='
-#iPostBegin = 1
-#iPostEnd = 10
-
 bdurl = str(raw_input(u'请输入贴吧的地址，去掉pn=后面的数字：\n'))
 begin_page = int(raw_input(u'请输入开始的页数：\n'))
 end_page = int(raw_input(u'请输入终点的页数：\n'))
+
 #-------- 在这里输入参数 ------------------
 
 
