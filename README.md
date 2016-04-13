@@ -6,3 +6,13 @@
 
 ##Setting working environment:</br>
 pip install requirements.txt</br>
+
+##Thanks
+Thanks for the great work of Egrcc(https://github.com/egrcc/zhihu-python) for his genius API python-zhihu that help me resolve the problem of authentiffcation and provide me a lot of useful tools!
+
+###For using zhihu-python API:
+First step:Authentification</br>
+python auth.py</br></br>
+Test step:</br>
+python test.py</br>
+  
