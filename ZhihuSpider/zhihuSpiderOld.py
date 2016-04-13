@@ -29,7 +29,8 @@ class Zhihu_Spider():
                 "q_c1":"efbabc1e9aef4c348876907a25379c6e|1458811078000|1458811078000",
                 "l_cap_id":'"MWRjOWM3ZmY0ZWM2NDdjZGFlZGM1MjhmZDIwMDk0YTg=|1459959674|9b8201da83d29abb20cf8d31343bc1d03010353c"',
                 "d_c0":'"AHAABU4OqgmPTiYCZouX3Ei-2CHF6FppTVw=|1458811079"',
-                "cap_id":'"MTNlYThmNjc1N2ZhNDEwNjhmMjhmMmYzMTljNTcwMzQ=|1459959674|bfd74e4e8b06547ec378f53b6b3abaf511e9c175"'}
+                "cap_id":'"MTNlYThmNjc1N2ZhNDEwNjhmMjhmMmYzMTljNTcwMzQ=|1459959674|bfd74e4e8b06547ec378f53b6b3abaf511e9c175"',
+                "_xsrf":'"7433cdb2823547df8051985494ebd385"'}
 
     def send_request(self):
         '''
@@ -132,4 +133,4 @@ class Zhihu_Spider():
 if __name__ == "__main__":
     zhihuUser=Zhihu_Spider("https://www.zhihu.com/people/BravoMaooo")
     zhihuUser.send_request()
-    zhihuUser.print_data_out()
+    #zhihuUser.print_data_out()
