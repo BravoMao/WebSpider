@@ -2,7 +2,6 @@
 #encoding:utf-8
 from matplotlib import pyplot as plt
 
-
 def plotPie4Gender(dics):
     plt.figure(figsize=(6,9))
     labels = getLables(dics)
@@ -19,7 +18,7 @@ def plotPie4Gender(dics):
     plt.axis('equal')
     plt.legend()
     plt.show()
-def getSizes(dicts):
+def getSizes(dics):
     sizes=[]
     for key in dics:
         sizes.append(dics[key])
@@ -32,6 +31,6 @@ def getLables(dics):
     return lables
 
 if __name__ == '__main__':
-    dics={"male":3,"female":3,"unknown":3}
-    plotPie4Gender(dics)
+    s={"male":3,"female":3,"unknown":3}
+    plotPie4Gender(s)
 
