@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #encoding:utf-8
 from matplotlib import pyplot as plt
+import numpy as np
 
 def plotPie4Gender(dics):
     plt.figure(figsize=(6,9))
@@ -18,6 +19,28 @@ def plotPie4Gender(dics):
     plt.axis('equal')
     plt.legend()
     plt.show()
+
+
+def plot4Top5(xlabel,ylabel,title,dics):
+   n_groups = 5
+   means_women = getSizes(dics)
+   print(means_women)
+   fig, ax = plt.subplots()
+   index = np.arange(n_groups)
+   bar_width = 0.35
+
+   opacity = 0.4
+   rects2 = plt.bar(index + bar_width/2, means_women, bar_width,alpha=opacity,color='r',label='User')
+
+   plt.xlabel(xlabel)
+   plt.ylabel(ylabel)
+   plt.title(title)
+   plt.xticks(index + bar_width, getLables(dics))
+   plt.ylim(0,50000)
+   plt.legend()
+   plt.tight_layout()
+   plt.show()
+
 def getSizes(dics):
     sizes=[]
     for key in dics:
@@ -32,5 +55,7 @@ def getLables(dics):
 
 if __name__ == '__main__':
     s={"male":3,"female":3,"unknown":3}
-    plotPie4Gender(s)
+    s2={"A":3700,"B":11100,"C":49139,"D":2000,"E":3540}
+    #plotPie4Gender(s)
+    plot4Top5('top 5 stars','number of followers','Result of Your top 5 stars',s2)
 

@@ -3,6 +3,8 @@
 
 from zhihu import User
 import visualisation as v
+import heapq
+import operator
 def getGenders(followers):
     genders={"male":0,"female":0,"unknown":0}
 
@@ -16,24 +18,23 @@ def getGenders(followers):
     return genders
 
 def getTop5Stars(followers):
-    stars={}
+    allFollowers={}
     for follower in followers:
-        if(len(stars)<5):
-            stars[follower.get_user_id()]=follower.get_followers_num()
-        else:
-            keys=stars.keys()
-            for key in keys:
-                if stars[key]<follower.get_followers_num():
-                    stars.pop(key,None)
-                    stars[follower.get_user_id()]=follower.get_followers_num()
+        allFollowers[follower.get_user_id()]=follower.get_followers_num()
 
-        print stars
+    stars = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
+    return stars
 
 if __name__ == '__main__':
 
     user_url = "https://www.zhihu.com/people/BravoMaooo"
     user = User(user_url)
-    user.get_followers_num()
+    print(user.get_work())
+    '''
+    user.get_user_id()
+    print(user.get_followers_num())
     followers = user.get_followers()
     dics=getTop5Stars(followers)
-    v.plotPie4Gender(dics)
+    print(dics)
+    v.plot4Top5(dics)
+    '''

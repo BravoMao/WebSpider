@@ -382,11 +382,6 @@ class User:
             return data_id
 
     def get_gender(self):
-        """
-            By Mukosame (https://github.com/mukosame)
-            增加获取知乎识用户的性别
-
-        """
         if self.user_url == None:
             print "I'm anonymous user."
             return 'unknown'
@@ -402,6 +397,32 @@ class User:
                     return 'male'
             except:
                 return 'unknown'
+    def get_location(self):
+        if self.user_url == None:
+            location= 'unknown'
+        else:
+            if self.soup == None:
+                self.parser()
+            soup = self.soup
+            try:
+                location = str(soup.find("span",class_="location item").get('title'))
+            except:
+                location ='unknown'
+        return location
+
+    def get_work(self):
+        if self.user_url == None:
+            work= 'unknown'
+        else:
+            if self.soup == None:
+                self.parser()
+                soup = self.soup
+            try:
+                work = str(soup.find("span",class_="business item").get('title'))
+            except:
+                work ='unknown'
+
+        return work
 
     def get_followees_num(self):
         if self.user_url == None:
@@ -423,8 +444,12 @@ class User:
             if self.soup == None:
                 self.parser()
             soup = self.soup
-            followers_num = int(soup.find("div", class_="zm-profile-side-following zg-clear") \
+            try:
+                followers_num = int(soup.find("div", class_="zm-profile-side-following zg-clear") \
                                 .find_all("a")[1].strong.string)
+            except Exception:
+                followers_num=0
+
             return followers_num
 
     def get_agree_num(self):

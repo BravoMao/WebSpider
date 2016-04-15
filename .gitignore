@@ -2,3 +2,4 @@
 .DS_Store
 verify.git
 cookies
+ZhihuSpider/*.pyc
