@@ -404,6 +404,7 @@ class User:
             if self.soup == None:
                 self.parser()
             soup = self.soup
+            print(soup.prettify())
             try:
                 location = str(soup.find("span",class_="location item").get('title'))
             except:

@@ -25,16 +25,36 @@ def getTop5Stars(followers):
     stars = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
     return stars
 
+def getTop5Cities(followers):
+    allFollowers={}
+    for follower in followers:
+        if allFollowers.has_key(follower.get_location()):
+            allFollowers[follower.get_location()]+=1
+        else:
+            allFollowers[follower.get_location()]=1
+        print allFollowers
+    stars = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
+    return stars
+
+def getTop5Works(followers):
+    allFollowers={}
+    for follower in followers:
+        if allFollowers.has_key(follower.get):
+            allFollowers[user.get_work()]+=1
+        else:
+            allFollowers[user.get_work()]=1
+        print allFollowers
+    stars = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
+    return stars
+
 if __name__ == '__main__':
 
     user_url = "https://www.zhihu.com/people/BravoMaooo"
     user = User(user_url)
-    print(user.get_work())
+    user.get_location()
     '''
-    user.get_user_id()
     print(user.get_followers_num())
     followers = user.get_followers()
-    dics=getTop5Stars(followers)
-    print(dics)
-    v.plot4Top5(dics)
+    dics=getTop5Cities(followers)
+    v.plot4Top5('top 5 stars','number of followers','Result of Your top 5 stars',dics)
     '''
