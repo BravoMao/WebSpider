@@ -404,7 +404,6 @@ class User:
             if self.soup == None:
                 self.parser()
             soup = self.soup
-            print(soup.prettify())
             try:
                 location = str(soup.find("span",class_="location item").get('title'))
             except:
@@ -424,6 +423,25 @@ class User:
                 work ='unknown'
 
         return work
+
+
+    def get_vote_thank_relation(self):
+        #indice=互赞次数+互相感谢次数
+        indice=0
+        if self.user_url == None:
+            indice=0
+        else:
+            if self.soup == None:
+                self.parser()
+                soup = self.soup
+            try:
+                for voteThank in (soup.find("div",class_="vote-thanks-relation").find_all('a')):
+                    indice=indice+int(voteThank.get_text().split(' ')[0])
+            except Exception:
+                print(Exception)
+                indice =0
+
+        return indice
 
     def get_followees_num(self):
         if self.user_url == None:

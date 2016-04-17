@@ -47,14 +47,19 @@ def getTop5Works(followers):
     stars = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
     return stars
 
-if __name__ == '__main__':
+def getTop5Relations(followers):
+    allFollowers={}
+    for follower in followers:
+        allFollowers[follower.get_user_id()]=follower.get_vote_thank_relation()
+        print(allFollowers)
+    superFriends = dict(sorted(allFollowers.iteritems(), key=operator.itemgetter(1), reverse=True)[:5])
+    return superFriends
 
+if __name__ == '__main__':
     user_url = "https://www.zhihu.com/people/BravoMaooo"
     user = User(user_url)
-    user.get_location()
-    '''
     print(user.get_followers_num())
     followers = user.get_followers()
-    dics=getTop5Cities(followers)
-    v.plot4Top5('top 5 stars','number of followers','Result of Your top 5 stars',dics)
-    '''
+    print(getTop5Relations(followers))
+    #dics=getTop5Cities(followers)
+    #v.plot4Top5('top 5 stars','number of followers','Result of Your top 5 stars',dics)
