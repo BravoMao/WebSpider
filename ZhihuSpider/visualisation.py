@@ -54,7 +54,7 @@ def plot4Top5(xlabel,ylabel,title,dics):
    plt.ylabel(ylabel)
    plt.title(title)
    plt.xticks(index + bar_width, getLables(dics))
-   plt.ylim(0,50000)
+   plt.ylim(0,55000)
    plt.legend()
    plt.tight_layout()
    plt.show()
@@ -62,7 +62,6 @@ def plot4Top5(xlabel,ylabel,title,dics):
 def getSizes(dics):
     sizes=[]
     for key in dics:
-        print(dics[key])
         sizes.append(dics[key])
     return sizes
 

@@ -463,11 +463,8 @@ class User:
             if self.soup == None:
                 self.parser()
             soup = self.soup
-            try:
-                followers_num = int(soup.find("div", class_="zm-profile-side-following zg-clear") \
+            followers_num = int(soup.find("div", class_="zm-profile-side-following zg-clear") \
                                 .find_all("a")[1].strong.string)
-            except Exception:
-                followers_num=0
 
             return followers_num
 
