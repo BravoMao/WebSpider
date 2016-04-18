@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #encoding:utf-8
+
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -40,14 +41,14 @@ def plotPie4Top5(dics):
 
 def plot4Top5(xlabel,ylabel,title,dics):
    n_groups = 5
-   means_women = getSizes(dics)
-   print(means_women)
+   sizes = getSizes(dics)
+   print(sizes)
    fig, ax = plt.subplots()
    index = np.arange(n_groups)
    bar_width = 0.35
 
    opacity = 0.4
-   rects2 = plt.bar(index + bar_width/2, means_women, bar_width,alpha=opacity,color='r',label='User')
+   rects2 = plt.bar(index + bar_width/2, sizes, bar_width,alpha=opacity,color='r',label='User')
 
    plt.xlabel(xlabel)
    plt.ylabel(ylabel)
