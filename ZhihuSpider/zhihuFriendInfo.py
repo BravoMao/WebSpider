@@ -72,7 +72,6 @@ if __name__ == '__main__':
     #an example to get your friends' city location
     user_url = "https://www.zhihu.com/people/BravoMaooo"
     user = User(user_url)
-    print(user.get_work())
     followers = user.get_followers()
     dics=getTop5Works(followers)
     print(dics)

@@ -59,6 +59,27 @@ def plot4Top5(xlabel,ylabel,title,dics):
    plt.tight_layout()
    plt.show()
 
+def plot4Top3(xlabel,ylabel,title,dics):
+   n_groups = 3
+   sizes = getSizes(dics)
+   print(sizes)
+   fig, ax = plt.subplots()
+   index = np.arange(n_groups)
+   bar_width = 0.35
+
+   opacity = 0.4
+   rects2 = plt.bar(index + bar_width/2, sizes, bar_width,alpha=opacity,color='blue',label='User')
+
+   plt.xlabel(xlabel)
+   plt.ylabel(ylabel)
+   plt.title(title)
+   plt.xticks(index + bar_width, getLables(dics))
+   plt.ylim(0,20)
+   plt.legend()
+   plt.tight_layout()
+   plt.show()
+   plt.show()
+
 def getSizes(dics):
     sizes=[]
     for key in dics:
@@ -74,6 +95,11 @@ def getLables(dics):
 if __name__ == '__main__':
     s={"male":3,"female":3,"unknown":3}
     s2={"A":3700,"B":11100,"C":49139,"D":2000,"E":3540}
+    s3={}
+    s3['wang jie']=11
+    s3['OUYANG Weiwei']=4
+    s3['esiee']=3
+    print(s3)
     #plotPie4Gender(s)
-    plotPie4Top5(s2)
+    plot4Top3("User","Friendship Index","Top 3 most interactive Friends",s3)
 
