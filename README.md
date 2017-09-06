@@ -4,7 +4,7 @@
 2.Urllib2 link=https://docs.python.org/2/howto/urllib2.html</br>
 3.re(regrex) link=http://www.tutorialspoint.com/python/python_reg_expressions.htm</br>
 
-##Setting working environment:</br>
+##Setting working environment: </br>
 pip install requirements.txt</br>
 
 ##Thanks
@@ -15,4 +15,3 @@ First step:Authentification</br>
 python auth.py</br></br>
 Test step:</br>
 python test.py</br>
-  
