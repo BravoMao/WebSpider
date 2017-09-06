@@ -13,5 +13,5 @@ Thanks for the great work of Egrcc(https://github.com/egrcc/zhihu-python) for hi
 ###For using zhihu-python API:
 First step:Authentification</br>
 python auth.py</br></br>
-Test step:</br>
+Test step(todo):</br>
 python test.py</br>
